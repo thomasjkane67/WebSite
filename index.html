@@ -28,9 +28,9 @@
     const xhr = new XMLHttpRequest();
     
     xhr.onload = function() {
-        if (this.status === 200) {
+        if (xhr.status === 200) {
             try {
-                const resObj = JSON.parse(this.responseText);
+                const resObj = JSON.parse(xhr.responseText);
                 console.log(resObj);
             } catch (e) {
                 console.warn('There is an error in the file!');
