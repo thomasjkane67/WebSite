@@ -24,12 +24,12 @@
 </body>
 
 <script>
-    var myBooks = ""
+//    var myBooks = ""
     var xhr = new XMLHttpRequest();
     
     xhr.onload = function() {
         if (this.status === 200) {
-            var myBooks = JSON.parse(this.responseText);
+            const myBooks = JSON.parse(this.responseText);
         } else {
             console.warn('Did not get Json file');
         }            
