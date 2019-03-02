@@ -30,7 +30,7 @@
     xhr.onload = function() {
         if (this.status === 200) {
             try {
-                const resObj == JSON.parse(this.responseText);
+                const resObj = JSON.parse(this.responseText);
                 console.log(resObj);
                 alert(resObj.status);
             } catch (e) {
