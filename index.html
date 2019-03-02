@@ -28,7 +28,9 @@
     xhr.onload = function() {
         console.log(this);
     };
-          
+    
+    xhr.open('get', 'https://thomasjkane67.github.io/json/Books.json');
+    xhr.send();
           
  //         method = 'GET',
  //           overrideMimeType = 'application/json',
