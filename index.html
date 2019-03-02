@@ -27,12 +27,12 @@
    
     function CreateTableFromJSON() {
         var myBooks = []
-        var xhr = new XMLHttpRequest(), 
+        const xhr = new XMLHttpRequest(), 
             method = 'GET',
             overrideMimeType = 'application/json',
             url = 'https://thomasjkane67.github.io/json/Books.json';        // ADD THE URL OF THE FILE.
 
-        xhr.onreadystatechange = function () {
+        xhr.onload = function() {
             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                 
                 // PARSE JSON DATA.
