@@ -26,7 +26,12 @@
 <script>
     const xhr = new XMLHttpRequest();
     xhr.onload = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
         console.log(this.resposeText);
+        } else {
+            console.warn('Did not get Json file');
+        }
+            
     };
     
     xhr.open('get', 'https://thomasjkane67.github.io/json/Books.json');
