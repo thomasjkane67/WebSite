@@ -24,21 +24,23 @@
 </body>
 
 <script>
-   
-    function() {
-        var myBooks = []
-        const xhr = new XMLHttpRequest(), 
-            method = 'GET',
-            overrideMimeType = 'application/json',
-            url = 'https://thomasjkane67.github.io/json/Books.json';        // ADD THE URL OF THE FILE.
+    const xhr = new XMLHttpRequest(), 
+    xhr.onload = function() {
+        
+    };
+          
+          
+ //         method = 'GET',
+ //           overrideMimeType = 'application/json',
+  //          url = 'https://thomasjkane67.github.io/json/Books.json';        // ADD THE URL OF THE FILE.
 
-        xhr.onload = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+        
+ //           if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                 
                 // PARSE JSON DATA.
-                var myBooks = JSON.parse(xhr.responseText);
-            }
-        }
+ //               var myBooks = JSON.parse(xhr.responseText);
+
+    
         // EXTRACT VALUE FOR HTML HEADER. 
         // ('Book ID', 'Book Name', 'Category' and 'Price')
 //        var col = [];
@@ -78,6 +80,6 @@
 //        var divContainer = document.getElementById("showData");
 //        divContainer.innerHTML = "";
 //        divContainer.appendChild(table);
-    }
+//    }
 </script>
 </html>
