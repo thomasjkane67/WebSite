@@ -33,7 +33,6 @@
                 try {
                     // var birds = JSON.parse(xhr.responseText);
                     const myBooks = JSON.parse(xhr.responseText);
-                  console.log(myBooks);
                 } catch (e) {
                     console.warn('There is an error in the file!');
                 }
@@ -45,6 +44,7 @@
         xhr.open('get', 'https://thomasjkane67.github.io/json/Books.json');
         xhr.send();
         var myBooks = myBooks;
+        console.log(myBooks);
     
         // EXTRACT VALUE FOR HTML HEADER. 
         // ('Book ID', 'Book Name', 'Category' and 'Price')
