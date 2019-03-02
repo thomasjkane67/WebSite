@@ -24,27 +24,35 @@
 </body>
 
 <script>
+   
+    window.onload = CreateTableFromJSON();
+
     function CreateTableFromJSON() {
-        var myBooks = [
-            {
-                "Book ID": "1",
-                "Book Name": "Computer Architecture",
-                "Category": "Computers",
-                "Price": "125.60"
-            },
-            {
-                "Book ID": "2",
-                "Book Name": "Asp.Net 4 Blue Book",
-                "Category": "Programming",
-                "Price": "56.00"
-            },
-            {
-                "Book ID": "3",
-                "Book Name": "Popular Science",
-                "Category": "Science",
-                "Price": "210.40"
+
+        // CREATE AN XMLHttpRequest OBJECT, WITH GET METHOD.
+        var myBooks = new XMLHttpRequest(), 
+            method = 'GET',
+            overrideMimeType = 'application/json',
+            url = 'https://thomasjkane67.github.io/json/Books.json';        // ADD THE URL OF THE FILE.
+
+        myBooks.onreadystatechange = function () {
+            if (myBooks.readyState === XMLHttpRequest.DONE && myBooks.status === 200) {
+                
+                // PARSE JSON DATA.
+                var Books = JSON.parse(myBooks.responseText);
+
+                var ele = document.getElementById('sel');
+                for (var i = 0; i < Books.length; i++) {
+                    // BIND DATA TO <select> ELEMENT.
+                    ele.innerHTML = ele.innerHTML +
+                        '<option value="' + Books[i].ID + '">' + Books[i].Name + '</option>';
+                }
             }
-        ]
+        };
+        myBooks.open(method, url, true);
+        myBooks.send();
+    }
+
 
         // EXTRACT VALUE FOR HTML HEADER. 
         // ('Book ID', 'Book Name', 'Category' and 'Price')
