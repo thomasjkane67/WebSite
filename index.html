@@ -27,8 +27,8 @@
     var xhr = new XMLHttpRequest();
     
     xhr.onload = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-            console.log(xhr);
+        if (this.status === 200) {
+            console.log(this);
         } else {
             console.warn('Did not get Json file');
         }            
