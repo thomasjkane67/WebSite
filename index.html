@@ -31,7 +31,7 @@
         if (this.status === 200) {
             try {
                 const resObj == JSON.parse(this.responseText);
-                
+                console.log(resObj);
                 alert(resObj.status);
             } catch (e) {
                 console.warn('There is an error in the file!');
