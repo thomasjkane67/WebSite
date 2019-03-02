@@ -31,6 +31,7 @@
         xhr.onload = function() {
             if (xhr.status === 200) {
                 try {
+                    // var birds = JSON.parse(xhr.responseText);
                     const resObj = JSON.parse(xhr.responseText);
 //                  console.log(resObj);
                 } catch (e) {
@@ -43,7 +44,7 @@
     
         xhr.open('get', 'https://thomasjkane67.github.io/json/Books.json');
         xhr.send();
-       var myBooks = xhr;
+       var myBooks = resObj;
     
 
         // EXTRACT VALUE FOR HTML HEADER. 
