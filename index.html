@@ -25,28 +25,18 @@
 
 <script>
     function CreateTableFromJSON() {
-            
-        const xhr = new XMLHttpRequest();
-    
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                try {
-                    // var birds = JSON.parse(xhr.responseText);
-                    const myBooks = JSON.parse(xhr.responseText);
-                  console.log(myBooks);
-                } catch (e) {
-                    console.warn('There is an error in the file!');
-                }
-            } else {
-            console.warn('Did not get Json file');
-            }            
-        };
-    
-        xhr.open('get', 'https://thomasjkane67.github.io/json/Books.json');
-        xhr.send();
-        var myBooks = myBooks;
-    
+        var xhr = new XMLHttpRequest(), 
+            method = 'GET',
+            overrideMimeType = 'application/json',
+            url = 'https://thomasjkane67.github.io/json/Books.json';
+            // ADD THE URL OF THE FILE.
 
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                
+        // PARSE JSON DATA.
+        var myBooks = JSON.parse(xhr.responseText);
+                
         // EXTRACT VALUE FOR HTML HEADER. 
         // ('Book ID', 'Book Name', 'Category' and 'Price')
         var col = [];
