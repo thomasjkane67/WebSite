@@ -28,7 +28,7 @@
     
     xhr.onload = function() {
         if (this.status === 200) {
-            console.log(this);
+            console.log(this.responseText);
         } else {
             console.warn('Did not get Json file');
         }            
