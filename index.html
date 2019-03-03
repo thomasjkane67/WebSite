@@ -24,7 +24,6 @@
 </body>
 
 <script>
-function() {        
     var url = 'https://thomasjkane67.github.io/json/Books.json'
     var NetMap = new XMLHttpRequest();
     NetMap.open('GET', url);
@@ -33,7 +32,6 @@ function() {
         CreateTableFromJSON(NetMapData);
     };
     NetMap.send();
-};
     
     function CreateTableFromJSON(myBooks) {
 
