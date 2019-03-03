@@ -6,7 +6,7 @@ btn.addEventListener("click", function() {
   NetMap.open('GET', url);
   NetMap.onload = function() {
     var NetMapData = JSON.parse(NetMap.responseText);
-    console.log(NetMapData[0]);
+    console.log(NetMapData);
   };
   NetMap.send();
 });
