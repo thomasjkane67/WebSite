@@ -1,8 +1,9 @@
 var url = 'https://thomasjkane67.github.io/json/Books.json'
-var myBooks = new XMLHttpRequest();
-myBooks.open('GET', url);
-myBooks.onliad = function() {
-  console.log(myBooks[0]);
+var NetMap = new XMLHttpRequest();
+NetMap.open('GET', url);
+NetMap.onload = function() {
+  var NetMapData = JSON.parse(NetMap.responseText);
+  console.log(NetMapData[0]);
 };
-myBooks.send();
+NetMap.send();
 
