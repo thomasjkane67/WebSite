@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>The Devices by Function</title>
+    <title>This Devices by Function</title>
     <style>
         
                 <!--Search bar-->
@@ -44,14 +44,9 @@
 <script>
     // var url = 'https://thomasjkane67.github.io/json/Books.json'
     // var url = 'https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b6907d289e10d714a6e88b30761fae22'
-    var url = 'https://newsapi.org/v2/top-headlines'
     var apiKey = '178ba2deb04548a5b6da17aa72725e31'
-    
-    HttpClient httpclient = new DefaultHttpClient();
-    HttpGet request = new HttpGet(url);
-    request.addHeader("x-api-key", apiKey);
-    HttpResponse response = httpclient.execute(request)
-
+    var url = 'https://newsapi.org/v2/top-headlines?key=apiKey'
+        
     var NetMap = new XMLHttpRequest();
     NetMap.open('GET', url);
     NetMap.onload = function() {
