@@ -3,6 +3,20 @@
 <head>
     <title>Network Devices by Function</title>
     <style>
+        
+                <!--Search bar-->
+        * {box-sizing: border-box;}
+	#myInput {
+		background-position: 10px 10px;
+		background-repeat: no-repeat;
+		width: 100%;
+		font-size: 16px;
+		padding: 12px 20px 12px 40px;
+		border: 1px solid #ddd;
+		margin-bottom: 12px;
+	    }
+        <!--Table-->
+        
         th, td, p, input {
             font:14px Verdana;
         }
@@ -19,6 +33,8 @@
     </style>
 </head>
 <body>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="..." >
+    <strong>Network Devices by Function</strong><br>
     <p id="showData"></p>
 </body>
 
